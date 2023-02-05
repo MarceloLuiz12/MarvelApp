@@ -1,7 +1,8 @@
-package daniel.lop.io.marvelappstarter
+package io
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import daniel.lop.io.marvelappstarter.R
 import daniel.lop.io.marvelappstarter.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

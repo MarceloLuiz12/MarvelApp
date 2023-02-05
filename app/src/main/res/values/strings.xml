@@ -33,5 +33,8 @@
     <!--    Toast messages -->
     <string name="an_error_occurred">Um erro ocorreu!</string>
     <string name="saved_successfully">Salvo com sucesso!</string>
+    <string name="favorite_title">Favoritos</string>
+    <string name="look_up">Pesquisar</string>
+    <string name="home">Home</string>
 
 </resources>

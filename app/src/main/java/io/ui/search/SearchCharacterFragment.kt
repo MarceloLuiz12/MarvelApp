@@ -1,0 +1,18 @@
+package io.ui.search
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
+import daniel.lop.io.marvelappstarter.databinding.FragmentSearchCharacterBinding
+import io.ui.base.BaseFragment
+
+@AndroidEntryPoint
+class SearchCharacterFragment : BaseFragment<FragmentSearchCharacterBinding, SearchCharacterViewModel>(){
+    override val viewModel: SearchCharacterViewModel by viewModels()
+
+    override fun getViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentSearchCharacterBinding = FragmentSearchCharacterBinding.inflate(inflater, container, false)
+}
