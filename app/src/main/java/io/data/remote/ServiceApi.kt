@@ -11,7 +11,7 @@ import retrofit2.http.Query
 interface ServiceApi {
 
     @GET("characters")
-    suspend fun list(@Query("nameStartsWitch") nameStartWith: String? = null): Response<CharacteModelResponse>
+    suspend fun list(@Query("nameStartsWith") nameStartWith: String? = null): Response<CharacteModelResponse>
 
     @GET("characters/{characterId}/comics")
     suspend fun  getComics(
