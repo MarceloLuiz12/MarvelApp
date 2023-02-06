@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class ComicModelData(
-    @SerializedName("result")
+    @SerializedName("results")
     val result: List<ComicModel>
 ): Serializable

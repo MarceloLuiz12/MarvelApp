@@ -1,11 +1,16 @@
 package io.di
 
+import android.content.Context
+import androidx.room.Room
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import io.data.model.local.MarvelDataBase
 import io.data.remote.ServiceApi
 import io.util.Constants.APIKEY
 import io.util.Constants.BASE_URL
+import io.util.Constants.DATABASE_NAME
 import io.util.Constants.HASH
 import io.util.Constants.PRIVATE_KEY
 import io.util.Constants.PUBLIC_KEY
@@ -23,6 +28,20 @@ import javax.inject.Singleton
 @dagger.Module
 @InstallIn(SingletonComponent::class)
 object Module {
+
+    @Singleton
+    @Provides
+    fun provideMarvelDataBase(
+        @ApplicationContext context: Context
+    ) = Room.databaseBuilder(
+        context,
+        MarvelDataBase::class.java,
+        DATABASE_NAME
+    ).build()
+
+    @Singleton
+    @Provides
+    fun provideMarvelDao(dataBase: MarvelDataBase) = dataBase.marvelDao()
 
     @Singleton
     @Provides

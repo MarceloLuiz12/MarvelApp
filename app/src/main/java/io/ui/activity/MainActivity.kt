@@ -1,4 +1,4 @@
-package io
+package io.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -11,6 +11,7 @@ import daniel.lop.io.marvelappstarter.R
 import daniel.lop.io.marvelappstarter.databinding.ItemCharacterBinding
 import io.data.model.character.CharacterModel
 import io.util.limitDescription
+import io.util.loadImage
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
@@ -56,9 +57,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
                 tvDescriptionCharacter.text = character.description.limitDescription(100)
             }
 
-            Glide.with(holder.itemView.context)
-                .load("${character.thumbnailModel.path}.${character.thumbnailModel.extension}")
-                .into(imgCharacter)
+            loadImage(imgCharacter, character.thumbnailModel.path,  character.thumbnailModel.extension)
         }
 
         holder.itemView.setOnClickListener{
@@ -72,6 +71,10 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
 
     fun setOnClickListeners(listener: (CharacterModel) -> Unit) {
         onItemClickListener = listener
+    }
+
+    fun getCharacterPosition(position: Int): CharacterModel {
+        return characters[position]
     }
 
 
